@@ -2,7 +2,7 @@
   <div class="cf">
     <div id="rawsweet" class="rawsweet">
       <div class="lineover">
-        <img src="img/line-over.png" />
+        <img src="../assets/img/line-over.png" />
         <h2>Raw sweet</h2>
       </div>
       <p>
@@ -26,7 +26,7 @@ export default {
 .rawsweet {
   padding: 6% 12% 8% 12%;
   background-color: #ffc6c6;
-  background-image: url(../img/rawsweet.png);
+  background-image: url(../../assets/img/rawsweet.png);
   background-position: right bottom;
   background-size: 30%;
   background-repeat: no-repeat;
@@ -36,7 +36,7 @@ export default {
 .rawsweet {
   padding: 12%;
   background-color: #ffc6c6;
-  background-image: url(../img/rawsweet.png);
+  background-image: url(../../assets/img/rawsweet.png);
   background-position: right bottom;
   background-size: 30%;
   background-repeat: no-repeat;

@@ -11,7 +11,7 @@
     </component>
     <div class="cf">
       <div class="bg-slider">
-        <p><img src="img/logo.png" class="logo" alt="HARU LIFE STYLE" /></p>
+        <p><img src="../assets/img/logo.png" class="logo" alt="HARU LIFE STYLE" /></p>
       </div>
     </div>
     <div class="cf">
@@ -33,8 +33,25 @@
 </template>
 
 <script>
+import RawSweet from './components/RawSweet.vue'
+import Material from './components/Material.vue'
+import Menu from './components/Menu.vue'
+import Guide from './components/Guide.vue'
+import SNS from './components/SNS.vue'
+import Message from './components/Message.vue'
+import Company from './components/Company.vue'
+
 export default {
-  name: "Material",
+  name: "Main",
+  component: {
+    RawSweet,
+    Material,
+    Menu,
+    Guide,
+    SNS,
+    Message,
+    Company
+  }
 };
 </script>
 

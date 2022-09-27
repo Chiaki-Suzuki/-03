@@ -2,7 +2,7 @@
   <div class="cf">
     <div id="menu" class="menu">
       <div class="lineover">
-        <img src="img/line-over.png" />
+        <img src="../assets/img/line-over.png" />
         <h2>Menu</h2>
       </div>
       <div class="search_box">
@@ -54,7 +54,7 @@
   <div>
     <div id="spmenu" class="spmenu">
       <div class="lineover">
-        <img src="img/line-over.png" />
+        <img src="../assets/img/line-over.png" />
         <h2>Menu</h2>
       </div>
       <div class="search_box">
@@ -89,13 +89,12 @@
             <input
               type="hidden"
               name="uuid"
-              value="5c625ef6-2ff8-4a3f-99ed-25580a0000c5"
-            /><button
+              value="5c625ef6-2ff8-4a3f-99ed-25580a0000c5" />
+            <button
               type="submit"
               data-pera1-type="shop_payment"
               data-bgcolor=""
-              data-item-id="15694"
-            >
+              data-item-id="15694">
               <h2>Buy now<i class="fas fa-shopping-cart"></i></h2>
             </button>
           </form>
@@ -106,8 +105,10 @@
 </template>
 
 <script>
+import cake from '../assets/cake.json'
 export default {
   name: "Menu",
+  
 };
 </script>
 

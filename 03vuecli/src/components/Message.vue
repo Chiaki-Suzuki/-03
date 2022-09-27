@@ -2,7 +2,7 @@
   <div class="cf">
     <div id="message" class="message">
       <div class="lineover">
-        <img src="img/line-over.png" />
+        <img src="../assets/img/line-over.png" />
         <h2>Message</h2>
       </div>
       <div class="messagetable">
@@ -19,7 +19,7 @@
         <p class="message2">ハルライフスタイル 　ハル</p>
       </div>
       <div class="lineunder">
-        <img src="img/line-under.png" />
+        <img src="../assets/img/line-under.png" />
       </div>
     </div>
   </div>

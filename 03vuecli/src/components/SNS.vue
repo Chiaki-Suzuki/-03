@@ -2,7 +2,7 @@
   <div class="cf">
     <div class="sns">
       <div class="lineover">
-        <img src="img/line-over.png">
+        <img src="../assets/img/line-over.png">
         <h2>SNS</h2>
       </div>
       <div class="insta">
