@@ -95,7 +95,7 @@
               data-pera1-type="shop_payment"
               data-bgcolor=""
               data-item-id="15694">
-              <h2>Buy now<i class="fas fa-shopping-cart"></i></h2>
+              <h2>Buy now<fa-icon icon="shopping-cart"></fa-icon></h2>
             </button>
           </form>
         </li>
@@ -108,7 +108,51 @@
 import cake from '../assets/cake.json'
 export default {
   name: "Menu",
-  
+  data: () => {
+    return {
+      cake: cake,
+      priceOrder: 0,
+      sortOrder: 1
+    }
+  },
+  computed: {
+    cakeFunc: function() {
+      // 絞り込み
+      let newItem = []
+      for (let i = 0; i < this.cake.length; i++) {
+        let isShow = true;
+        // 5000円以下
+        if (this.cake[i].price > 5000 && this.priceOrder === 5000) {
+          isShow = false
+        }
+        // 6000円以下
+        else if (this.cake[i].price > 6000 && this.priceOrder === 6000) {
+          isShow = false
+        }
+        // 7000円以下
+        else if (this.cake[i].price > 7000 && this.priceOrder === 7000) {
+          isShow = false
+        }
+
+        if (isShow) {
+          newItem.puch(this.cake[i])
+        }
+      }
+
+      // ソート
+      if (sortOrder == 2) {
+        newItem.sort(function (a, b) {
+          return a.price - b.price
+        })
+      } else if (sortOrder == 3) {
+        newItem.sort(function (a, b) {
+          return b.price - a.price
+        })
+      }
+
+      return newItem
+    }
+  }
 };
 </script>
 
