@@ -1,6 +1,6 @@
 <template>
   <main>
-    <component>
+    <component is="style">
       .cf:before,
       .cf:after {
         content: "";
@@ -10,7 +10,15 @@
       .cf{ zoom: 1; }
     </component>
     <div class="cf">
-      <div class="bg-slider">
+      <div class="bg-slider slide-outer">
+        <transition :name="fade">
+          <div class="slider-inner"
+            v-for="(slide, idx) in slides"
+            :key="idx"
+            v-if="currentSlide == idx">
+            <img class="slide-img" v-bind:src="slide.img">
+          </div>
+        </transition>
         <p><img src="../assets/img/logo.png" class="logo" alt="HARU LIFE STYLE" /></p>
       </div>
     </div>
@@ -33,17 +41,17 @@
 </template>
 
 <script>
-import RawSweet from './components/RawSweet.vue'
-import Material from './components/Material.vue'
-import Menu from './components/Menu.vue'
-import Guide from './components/Guide.vue'
-import SNS from './components/SNS.vue'
-import Message from './components/Message.vue'
-import Company from './components/Company.vue'
+import RawSweet from '../components/RawSweet.vue'
+import Material from '../components/Material.vue'
+import Menu from '../components/Menu.vue'
+import Guide from '../components/Guide.vue'
+import SNS from '../components/SNS.vue'
+import Message from '../components/Message.vue'
+import Company from '../components/Company.vue'
 
 export default {
-  name: "Main",
-  component: {
+  name: 'Main',
+  components: {
     RawSweet,
     Material,
     Menu,
@@ -51,6 +59,37 @@ export default {
     SNS,
     Message,
     Company
+  },
+  data: () => {
+    return {
+      currentSlide: 0,
+      slides: [
+        {img: '/img/bg1-1.jpg'},
+        {img: '/img/bg1-2.jpg'},
+        {img: '/img/bg1-3.jpg'}
+        ],
+        fade: 'next',
+        show: true,
+        timer: 0
+    }
+  },
+  mounted: function() {
+    this.$nextTick(() => {
+      this.timer = setInterval(() => {
+        this.autoPlay()
+      }, 10000)
+    })
+  },
+  unmounted: function () {
+    clearInterval(this.timer)
+  },
+  methods: {
+    autoPlay: function() {
+      this.currentSlide++;
+      if (this.currentSlide === this.slides.length) {
+        this. currentSlide = 0;
+      }
+    }
   }
 };
 </script>
@@ -75,6 +114,13 @@ export default {
 .logo {
   text-align: center;
   max-width:260px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 10;
 }
 
 .lineover {
@@ -122,6 +168,7 @@ h3 {
 .logo {
   padding: 24%;
   width: 50%;
+  z-index: 10;
 }
 
 .lineover {
@@ -149,5 +196,39 @@ h3 {
   font-size: 1.1em;
   padding-bottom: 0.5em;
 }
+}
+/*-------------------------
+  スライダー
+-------------------------*/
+.slide-outer {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.slider-inner {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+.slide-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.next-enter-active {
+  transition: all 1s ease;
+}
+
+.next-leave-active {
+  transition: all 1s ease;
+  position: absolute;
+}
+
+.next-enter,
+.next-leave-to {
+  opacity: 0;
 }
 </style>

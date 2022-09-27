@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "RawSweet",
+  name: 'RawSweet',
 };
 </script>
 
@@ -26,7 +26,7 @@ export default {
 .rawsweet {
   padding: 6% 12% 8% 12%;
   background-color: #ffc6c6;
-  background-image: url(../../assets/img/rawsweet.png);
+  background-image: url(../assets/img/rawsweet.png);
   background-position: right bottom;
   background-size: 30%;
   background-repeat: no-repeat;
@@ -36,7 +36,7 @@ export default {
 .rawsweet {
   padding: 12%;
   background-color: #ffc6c6;
-  background-image: url(../../assets/img/rawsweet.png);
+  background-image: url(../assets/img/rawsweet.png);
   background-position: right bottom;
   background-size: 30%;
   background-repeat: no-repeat;

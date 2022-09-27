@@ -26,7 +26,7 @@
       </div>
       <ul>
         <li v-for="item in cakeFunc" v-bind:key="item.id">
-          <img v-bind:src="item.image" />
+          <img v-bind:src="getUrl(item.image)" />
           <h4>{{ item.name }}</h4>
           <p class="cakename">
             {{ item.kana }}<br />{{ item.size }}cm/{{ item.type }}型
@@ -37,21 +37,20 @@
             <input
               type="hidden"
               name="uuid"
-              value="5c625ef6-2ff8-4a3f-99ed-25580a0000c5"
-            /><button
+              value="5c625ef6-2ff8-4a3f-99ed-25580a0000c5"/>
+            <button
               type="submit"
               data-pera1-type="shop_payment"
               data-bgcolor=""
-              data-item-id="15694"
-            >
-              <h2>Buy now<i class="fas fa-shopping-cart"></i></h2>
+              data-item-id="15694">
+              <h2>Buy now<fa-icon icon="shopping-cart"></fa-icon></h2>
             </button>
           </form>
         </li>
       </ul>
     </div>
   </div>
-  <div>
+  <!-- <div>
     <div id="spmenu" class="spmenu">
       <div class="lineover">
         <img src="../assets/img/line-over.png" />
@@ -101,18 +100,28 @@
         </li>
       </ul>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>
 import cake from '../assets/cake.json'
 export default {
-  name: "Menu",
+  name: 'Menu',
   data: () => {
     return {
       cake: cake,
       priceOrder: 0,
       sortOrder: 1
+    }
+  },
+  filters: {
+    number_format: function (num) {
+      return parseInt(num).toLocaleString();
+    }
+  },
+  methods: {
+    getUrl: function (img) {
+      return `/menu/${img}`
     }
   },
   computed: {
@@ -135,16 +144,16 @@ export default {
         }
 
         if (isShow) {
-          newItem.puch(this.cake[i])
+          newItem.push(this.cake[i])
         }
       }
 
       // ソート
-      if (sortOrder == 2) {
+      if (this.sortOrder == 2) {
         newItem.sort(function (a, b) {
           return a.price - b.price
         })
-      } else if (sortOrder == 3) {
+      } else if (this.sortOrder == 3) {
         newItem.sort(function (a, b) {
           return b.price - a.price
         })

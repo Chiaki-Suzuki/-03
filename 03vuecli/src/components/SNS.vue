@@ -32,7 +32,7 @@
             <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2019-03-20T23:45:28+00:00">2019年 3月月20日午後4時45分PDT</time></p>
           </div>
         </blockquote>
-        <script async src="//www.instagram.com/embed.js"></script>
+        <!-- <script async src="//www.instagram.com/embed.js"></script> -->
       </div>
       <div class="facebook">
         <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fm.facebook.com%2FHARU-LIFE-STYLE-1600389390090690%2F&tabs=timeline&width=350&height=470&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="350" height="470" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>

@@ -48,7 +48,7 @@
 
 <script>
 export default {
-  name: "Material",
+  name: 'Material',
 };
 </script>
 

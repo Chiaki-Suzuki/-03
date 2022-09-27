@@ -41,7 +41,7 @@
 
 <script>
 export default {
-  name: "Guide",
+  name: 'Guide',
 };
 </script>
 
@@ -49,7 +49,7 @@ export default {
 @media screen and (min-width:768px) {
 .guide {
   padding: 6% 15%;
-  background-image: url(../../assets/img/bg2.png);
+  background-image: url(../assets/img/bg2.png);
   background-position: center;
   background-size: cover;
 }

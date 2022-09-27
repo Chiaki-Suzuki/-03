@@ -9,11 +9,11 @@
         <li><a href="#message">Message</a></li>
         <li><a href="#company">Company</a></li>
         <li>
-          <a href="https://pay.peraichi.com/checkout/items/harulifestyle/?lp" target="_blank" ><i class="fa fa-shopping-cart"></i>カートを見る</a>
+          <a href="https://pay.peraichi.com/checkout/items/harulifestyle/?lp" target="_blank" ><fa-icon icon="shopping-cart"></fa-icon>カートを見る</a>
         </li>
         <li>
-          <a href="https://www.instagram.com/harulife/" target="_blank"><i class="fab fa-instagram"></i></a>　
-          <a href="https://www.facebook.com/HARU-LIFE-STYLE-1600389390090690/" target="_blank" ><i class="fab fa-facebook-square"></i></a>
+          <a href="https://www.instagram.com/harulife/" target="_blank"><fa-icon :icon="['fab', 'instagram']"></fa-icon></a>　
+          <a href="https://www.facebook.com/HARU-LIFE-STYLE-1600389390090690/" target="_blank" ><fa-icon :icon="['fab', 'facebook-square']" size="2x"></fa-icon></a>
         </li>
       </ul>
     </nav>
@@ -29,8 +29,8 @@
         <a href="https://pay.peraichi.com/checkout/items/harulifestyle/?lp" target="_blank"><fa-icon icon="shopping-cart"></fa-icon>カートを見る</a>
       </li>
       <li>
-        <a href="https://www.instagram.com/harulife/" target="_blank"><fa-icon icon="instagram"></fa-icon></a>　
-        <a href="https://www.facebook.com/HARU-LIFE-STYLE-1600389390090690/" target="_blank"><fa-icon icon="facebook-square"></fa-icon></a>
+        <a href="https://www.instagram.com/harulife/" target="_blank"><fa-icon :icon="['fab', 'instagram']"></fa-icon></a>　
+        <a href="https://www.facebook.com/HARU-LIFE-STYLE-1600389390090690/" target="_blank"><fa-icon :icon="['fab', 'facebook-square']"></fa-icon></a>
       </li>
     </ul>
     <!-- ハンバーガーメニュー部分 -->
@@ -44,7 +44,7 @@
 
 <script>
 export default {
-  name: "Header",
+  name: 'Header',
 };
 </script>
 
