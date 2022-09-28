@@ -121,7 +121,7 @@ export default {
   },
   methods: {
     getUrl: function (img) {
-      return `/menu/${img}`
+      return `./menu/${img}`
     }
   },
   computed: {

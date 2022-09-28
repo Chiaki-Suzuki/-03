@@ -64,9 +64,9 @@ export default {
     return {
       currentSlide: 0,
       slides: [
-        {img: '/img/bg1-1.jpg'},
-        {img: '/img/bg1-2.jpg'},
-        {img: '/img/bg1-3.jpg'}
+        {img: './img/bg1-1.jpg'},
+        {img: './img/bg1-2.jpg'},
+        {img: './img/bg1-3.jpg'}
         ],
         fade: 'next',
         show: true,
