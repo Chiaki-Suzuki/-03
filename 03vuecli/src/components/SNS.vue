@@ -44,7 +44,16 @@
 
 <script>
 export default {
-  name: "SNS",
+  head: async function() {
+    return {
+      script:[
+        {
+          src: 'https://www.instagram.com/embed.js',
+        }
+      ]
+    }
+  },
+  name: "SNS"
 };
 </script>
 

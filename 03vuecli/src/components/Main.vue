@@ -73,17 +73,19 @@ export default {
         timer: 0
     }
   },
+  // 10秒ごとにキービジュアルを切り替える
   mounted: function() {
     this.$nextTick(() => {
       this.timer = setInterval(() => {
         this.autoPlay()
-      }, 10000)
+      }, 7000)
     })
   },
   unmounted: function () {
     clearInterval(this.timer)
   },
   methods: {
+    // 表示する画像を指定し、最後まで表示したら最初に戻る
     autoPlay: function() {
       this.currentSlide++;
       if (this.currentSlide === this.slides.length) {
@@ -168,6 +170,12 @@ h3 {
 .logo {
   padding: 24%;
   width: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
   z-index: 10;
 }
 
