@@ -170,7 +170,7 @@ export default {
 .search_box {
   display: flex;
   flex-wrap: wrap;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   margin: 0 15px 0 0;
 }
@@ -261,7 +261,7 @@ button{
 .search_box {
   display: flex;
   flex-wrap: wrap;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   margin: 0 5px 0 0;
 }
