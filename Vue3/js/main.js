@@ -1,24 +1,20 @@
-let app = new Vue({
-  el: "#app",
-  data: {
-    cake: [],
-    priceOrder: 0,
-    sortOrder: 1
+let app = Vue.createApp ({
+  data() {
+    return {
+      cake: [],
+      priceOrder: 0,
+      sortOrder: 1,
+    }
   },
   // JSON呼び出し
-  created: async function () {
+  async created () {
     const res = await fetch('js/cake.json');
     const items = await res.json();
     this.cake = items;
   },
-  // 金額をカンマ区切りに
-  filters: {
-    number_format: function (val) {
-      return parseInt(val).toLocaleString();
-    }
-  },
   computed: {
-    cakeFunc: function () {
+    // 絞り込み＆ソート
+    cakeFunc() {
       let newCake = [];
 
       for (i = 0; i < this.cake.length; i++) {
@@ -51,8 +47,16 @@ let app = new Vue({
           return b.price - a.price;
         })
       }
-
       return newCake;
     }
   }
 })
+
+// 金額をカンマ区切りに
+app.config.globalProperties.$filters = {
+  number_format(val) {
+    return parseInt(val).toLocaleString();
+  }
+}
+
+app.mount('#app')

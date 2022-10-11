@@ -64,6 +64,7 @@
                 });
             });
         </script>
+        <script src="https://unpkg.com/vue@next"></script>
     </head>
     <body>
         <header>
@@ -193,7 +194,8 @@
                             <h4>{{ item.name }}</h4>
                             <p class="cakename">{{ item.kana }}<br>{{ item.size }}cm/{{ item.type }}型</p>
                             <p class="caketext">{{ item.explanation }}</p>
-                            <h5>{{ item.price | number_format }}円（税込）</h5>
+                            <h5>{{ $filters.number_format(item.price) }}円（税込）</h5>
+                            <!-- <h5>{{ item.price }}円（税込）</h5> -->
                             <form action="https://pay.peraichi.com/checkout/add" method="post"><input type="hidden" name="uuid" value="5c625ef6-2ff8-4a3f-99ed-25580a0000c5"><button type="submit" data-pera1-type="shop_payment" data-bgcolor="" data-item-id="15694">
                                     <h2>Buy now<i class="fas fa-shopping-cart"></i></h2>
                                 </button></form>
@@ -232,7 +234,8 @@
                             <h4>{{ item.name }}</h4>
                             <p class="cakename">{{ item.kana }}<br>{{ item.size }}cm/{{ item.type }}型</p>
                             <p class="caketext">{{ item.explanation }}</p>
-                            <h5>{{ item.price | number_format }}円（税込）</h5>
+                            <!-- <h5>{{ $filters.number_format(item.price) }}円（税込）</h5> -->
+                            <h5>{{ item.price }}円（税込）</h5>
                             <form action="https://pay.peraichi.com/checkout/add" method="post"><input type="hidden" name="uuid" value="5c625ef6-2ff8-4a3f-99ed-25580a0000c5"><button type="submit" data-pera1-type="shop_payment" data-bgcolor="" data-item-id="15694">
                                     <h2>Buy now<i class="fas fa-shopping-cart"></i></h2>
                                 </button></form>
@@ -366,7 +369,7 @@
                 <a href="https://peraichi.com/terms_for_customer/view/amex0t1aw00" target="_blank">決済に関する利用規約</a>
             </div>
         </footer>
+
+        <script src="js/main.js"></script>
     </body>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="js/main.js"></script>
 </html>
