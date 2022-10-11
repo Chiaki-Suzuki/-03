@@ -2,7 +2,7 @@
   <div class="cf">
     <div id="guide" class="guide">
       <div class="lineover">
-        <img src="../assets/img/line-over.png" />
+        <img src="././img/line-over.png" />
         <h2>Guide</h2>
       </div>
       <div class="guideue">
@@ -49,7 +49,7 @@ export default {
 @media screen and (min-width:768px) {
 .guide {
   padding: 6% 15%;
-  background-image: url(../assets/img/bg2.png);
+  background-image: url(././img/bg2.png);
   background-position: center;
   background-size: cover;
 }

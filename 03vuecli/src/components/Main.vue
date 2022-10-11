@@ -19,7 +19,7 @@
             <img class="slide-img" v-bind:src="slide.img">
           </div>
         </transition>
-        <p><img src="../assets/img/logo.png" class="logo" alt="HARU LIFE STYLE" /></p>
+        <p><img src="././img/logo.png" class="logo" alt="HARU LIFE STYLE" /></p>
       </div>
     </div>
     <div class="cf">
@@ -64,9 +64,9 @@ export default {
     return {
       currentSlide: 0,
       slides: [
-        {img: './img/bg1-1.jpg'},
-        {img: './img/bg1-2.jpg'},
-        {img: './img/bg1-3.jpg'}
+        {img: '././img/bg1-1.jpg'},
+        {img: '././img/bg1-2.jpg'},
+        {img: '././img/bg1-3.jpg'}
         ],
         fade: 'next',
         show: true,

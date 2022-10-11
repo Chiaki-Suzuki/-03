@@ -2,7 +2,7 @@
   <div class="cf">
     <div id="menu" class="menu">
       <div class="lineover">
-        <img src="../assets/img/line-over.png" />
+        <img src="././img/line-over.png" />
         <h2>Menu</h2>
       </div>
       <div class="search_box">
@@ -53,7 +53,7 @@
   <!-- <div>
     <div id="spmenu" class="spmenu">
       <div class="lineover">
-        <img src="../assets/img/line-over.png" />
+        <img src="././img/line-over.png" />
         <h2>Menu</h2>
       </div>
       <div class="search_box">
@@ -104,7 +104,7 @@
 </template>
 
 <script>
-import cake from '../assets/cake.json'
+import cake from './cake.json'
 export default {
   name: 'Menu',
   data: () => {
