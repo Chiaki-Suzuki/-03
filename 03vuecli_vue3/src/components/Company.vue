@@ -2,7 +2,7 @@
   <div class="cf">
     <div id="company" class="company">
       <div class="lineover">
-        <img src="././img/line-over.png" />
+        <img src="../assets/img/line-over.png" />
         <h2>Company</h2>
       </div>
       <div>
@@ -19,7 +19,7 @@
     </div>
     <div id="spcompany" class="spcompany">
       <div class="lineover">
-        <img src="././img/line-over.png" />
+        <img src="../assets/img/line-over.png" />
         <h2>Company</h2>
       </div>
       <div>

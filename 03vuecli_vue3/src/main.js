@@ -6,6 +6,10 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 library.add(fas, fab)
-Vue.component('fa-icon', FontAwesomeIcon)
 
-createApp(App).mount('#app')
+// vueインスタンス作成
+let app = createApp(App)
+// fontawesome
+app.component('fa-icon', FontAwesomeIcon)
+// マウント
+app.mount('#app')

@@ -2,11 +2,11 @@
   <div class="cf">
     <div class="material">
       <div class="lineover">
-        <img src="././img/line-over.png" />
+        <img src="../assets/img/line-over.png" />
         <h2>Material</h2>
       </div>
       <figure class="good">
-        <img src="././img/good.png" class="goodbadimg" />
+        <img src="../assets/img/good.png" class="goodbadimg" />
         <figcaption>
           <h3>主な食材</h3>
           <p>
@@ -23,7 +23,7 @@
         </figcaption>
       </figure>
       <figure class="bad">
-        <img src="././img/bad.png" class="goodbadimg" />
+        <img src="../assets/img/bad.png" class="goodbadimg" />
         <figcaption>
           <h3>使わない食材</h3>
           <p>

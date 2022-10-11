@@ -2,7 +2,7 @@
   <div class="cf">
     <div id="menu" class="menu">
       <div class="lineover">
-        <img src="././img/line-over.png" />
+        <img src="../assets/img/line-over.png" />
         <h2>Menu</h2>
       </div>
       <div class="search_box">
@@ -25,14 +25,14 @@
         </div>
       </div>
       <ul>
-        <li v-for="item in cakeFunc" v-bind:key="item.id">
+        <li v-for="item in cakeFunc">
           <img v-bind:src="getUrl(item.image)" />
           <h4>{{ item.name }}</h4>
           <p class="cakename">
             {{ item.kana }}<br />{{ item.size }}cm/{{ item.type }}型
           </p>
           <p class="caketext">{{ item.explanation }}</p>
-          <h5>{{ item.price | number_format }}円（税込）</h5>
+          <h5>{{ number_format(item.price) }}円（税込）</h5>
           <form action="https://pay.peraichi.com/checkout/add" method="post">
             <input
               type="hidden"
@@ -53,7 +53,7 @@
   <!-- <div>
     <div id="spmenu" class="spmenu">
       <div class="lineover">
-        <img src="././img/line-over.png" />
+        <img src="../assets/img/line-over.png" />
         <h2>Menu</h2>
       </div>
       <div class="search_box">
@@ -104,28 +104,28 @@
 </template>
 
 <script>
-import cake from './cake.json'
+import cake from '../assets/cake.json'
 export default {
   name: 'Menu',
-  data: () => {
+  data() {
     return {
       cake: cake,
       priceOrder: 0,
       sortOrder: 1
     }
   },
-  filters: {
-    number_format: function (num) {
+  methods: {
+    // 画像パス追加
+    getUrl(img) {
+      return `./menu/${img}`
+    },
+    // 金額をカンマ区切りにする
+    number_format(num) {
       return parseInt(num).toLocaleString();
     }
   },
-  methods: {
-    getUrl: function (img) {
-      return `./menu/${img}`
-    }
-  },
   computed: {
-    cakeFunc: function() {
+    cakeFunc() {
       // 絞り込み
       let newItem = []
       for (let i = 0; i < this.cake.length; i++) {
