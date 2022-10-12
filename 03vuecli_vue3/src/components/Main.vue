@@ -11,10 +11,10 @@
     </component>
     <div class="cf">
       <div class="bg-slider slide-outer">
-        <transition-group :name="fade">
+        <transition-group :name="fade" appear>
           <div class="slider-inner"
-            v-for="(slide, key, idx) in slides"
-            v-if="currentSlide == idx">
+            v-for="slide in changeSlide"
+            :key="slide.id">
             <img class="slide-img" v-bind:src="slide.img">
           </div>
         </transition-group>
@@ -64,8 +64,8 @@ export default {
       currentSlide: 0,
       slides: [
         {img: './img/bg1-1.jpg', id: 0},
-        {img: './img/bg1-2.jpg', id: 0},
-        {img: './img/bg1-3.jpg', id: 0}
+        {img: './img/bg1-2.jpg', id: 1},
+        {img: './img/bg1-3.jpg', id: 2}
         ],
         fade: 'next',
         show: true,
@@ -90,6 +90,16 @@ export default {
       if (this.currentSlide === this.slides.length) {
         this. currentSlide = 0;
       }
+    }
+  },
+  computed: {
+    // 表示するキービジュアルを切り替える
+    changeSlide() {
+      let num = this.currentSlide;
+      let slide = this.slides.filter(function(item){
+        return item.id === num;
+      })
+      return slide;
     }
   }
 };
@@ -227,14 +237,15 @@ h3 {
 
 .next-enter-active {
   transition: all 1s ease;
+  /* position: absolute; */
 }
 
 .next-leave-active {
   transition: all 1s ease;
-  position: absolute;
+  /* position: absolute; */
 }
 
-.next-enter,
+.next-enter-from,
 .next-leave-to {
   opacity: 0;
 }
